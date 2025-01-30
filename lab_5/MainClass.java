@@ -10,7 +10,7 @@ public static void main(String[] args) {
     List<ComandaOnlineClass> comenzi = Collections.synchronizedList(new ArrayList<>());
 
         long startTime = System.currentTimeMillis();
-        long endTime = startTime + 1* 60 * 1000;
+        long endTime = startTime + 1* 30 * 1000;
 
 
         
@@ -62,16 +62,14 @@ public static void main(String[] args) {
         };
         executorService.submit(() -> {
             try {
-                Thread.sleep(2 * 60 * 1000); 
+                Thread.sleep(1 * 60 * 1000); 
                 System.out.println("Incepem procesarea tuturor comenzilor.");
                 processCommandsTask.call();
                 comenzi.clear(); 
                 System.out.println("Toate comenzile au fost procesate si lista a fost golita.");
             } catch (Exception e) {
-                System.err.println("Eroare la procesarea comenzilor: " + e.getMessage());
-            } finally {
-                executorService.shutdown();
-            }
+                System.out.println("Eroare la procesarea comenzilor: " + e.getMessage());
+            } 
         });
 
         try {
@@ -82,7 +80,7 @@ public static void main(String[] args) {
             executorService.shutdownNow(); 
         }
         
-      
+      executorService.shutdown();
 }
 }
 
