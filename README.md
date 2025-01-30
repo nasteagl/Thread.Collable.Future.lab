@@ -1,4 +1,4 @@
-## In acest proiect am implementat următoarele sarciniȘ
+## In acest proiect am implementat următoarele sarcini:
 - 1.Am ales o temă de lucru pe baza căreia vom implementa fire de execuție paralelă (Gestionarea comenzilor online)
 - 2.Am utilizat metode de creare a thredurilor prin Runnable, Thread
 - 3.Am implementat un exemplu cu Callable 
